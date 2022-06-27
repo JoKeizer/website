@@ -1,6 +1,5 @@
 
 import React from 'react'
-import homeImg1 from '../img/home1.png';
 
 const FaqSection = () => {
   return (
@@ -35,7 +34,6 @@ const FaqSection = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, aspernatur.</p>
           </div>
         </div>
-
       </div>
     </div>
   )
