@@ -1,6 +1,6 @@
 
 import React from 'react'
-import home1 from '../img/home1.png'
+import homeImg1 from '../img/home1.png';
 
 const AboutSection = () => {
   return (
@@ -24,10 +24,8 @@ const AboutSection = () => {
         <button>Contact us</button>
       </div>
       <div className="image">
-        <img src="{home1}" alt="" />
+        <img src={homeImg1}  alt="image" />
       </div>
-
-  
     </div>
   )
 }
