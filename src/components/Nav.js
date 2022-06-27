@@ -5,16 +5,16 @@ import styled from 'styled-components';
 const Nav = () => {
   return (
     <StyledNav>
-      <h1><a id="logo" href="#">Creative Web Vibes</a></h1>
+      <h1><a id="logo" href="/">Creative Web Vibes</a></h1>
       <ul>
         <li>
-          <a href="#">1. About Us</a>
+          <a href="/">1. About Us</a>
         </li>
         <li>
-          <a href="#">2. Our Work</a>
+          <a href="/our-work">2. Our Work</a>
         </li>
         <li>
-          <a href="#">1. Contact Us</a>
+          <a href="/contact">1. Contact Us</a>
         </li>
       </ul>
 
