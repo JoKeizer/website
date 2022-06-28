@@ -1,3 +1,5 @@
+import React, {useState, useEffect} from 'react';
+
 //Nav
 import Nav from './components/Nav'
 
@@ -10,19 +12,41 @@ import MovieDetail from './pages/MovieDetail'
 import GlobalStyle from './components/GlobalStyle';
 
 //Router
-import { Routes ,Route } from 'react-router-dom';
+import { Routes ,Route, useLocation} from 'react-router-dom';
+
+//Animation //when leave
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
+
+  const [currentKey, setCurrentKey] = useState("123");
+
+  const location = useLocation();
+
+
+  React.useEffect(() => {
+    console.log(location)
+    let keyIndex = Math.random();
+    setCurrentKey(keyIndex)
+    location.key = keyIndex.toString();
+  }, [location]);
+
+  console.log(currentKey,"currentKey")
+  console.log(location.key,"locationkey")
+  console.log(location)
+  
   return (
     <div className="App">
       <GlobalStyle/>
       <Nav/>
-      <Routes>
-        <Route path='/' element={<AboutUs/>} />
-        <Route path='/work' element={<OurWork/>} />
-        <Route path="/work/:id" element={<MovieDetail/>}/>
-        <Route path='/contact' element={<ContactUs/>} />
-      </Routes>
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
+          <Route path='/' exact element={<AboutUs/>} />
+          <Route path='/work' exact element={<OurWork/>} />
+          <Route path="/work/:id" element={<MovieDetail/>}/>
+          <Route path='/contact' element={<ContactUs/>} />
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 }
