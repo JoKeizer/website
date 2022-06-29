@@ -13,6 +13,7 @@ import {pageAnimation, fade, photoAnim, lineAnim, slider, sliderContainer} from 
 
 //useScroll
 import { useScroll } from "../components/useScroll";
+import ScrollTop from "../components/ScrollTop"
 
 const OurWork = () => {
   const [element, controls] = useScroll()
@@ -61,6 +62,7 @@ const OurWork = () => {
           <img src={goodtimes} alt="goodtimes" />
           </Link>
         </Movie>
+        <ScrollTop/>
       </Work>
   )
 };
@@ -69,6 +71,11 @@ const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
+  @media (max-width: 1300px) {
+    padding: 2rem;
+  }
+
+  
 
   h2 {
     padding: 1rem 0rem;
