@@ -5,10 +5,17 @@ import styled from 'styled-components';
 import {LayoutSection, Descriptions, Image, Hide} from '../styles'
 import Toggle from './Toggle';
 
+import { scrollReveal } from '../animations';
+
+//ScrollAnim
+import {useScroll} from "./useScroll";
+
 const FaqSection = () => {
+  const [element, controls] = useScroll();
+
   return (
     <div>
-      <Faq>
+      <Faq variants={scrollReveal} ref={element} animate={controls} initial={"hidden"}>
         <h2>Any questions <span>FAQ</span></h2>
         <Toggle title="How Do I Start?">
           <div className="answer">

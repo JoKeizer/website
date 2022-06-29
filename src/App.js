@@ -12,7 +12,7 @@ import MovieDetail from './pages/MovieDetail'
 import GlobalStyle from './components/GlobalStyle';
 
 //Router
-import { Routes ,Route, useLocation} from 'react-router-dom';
+import { Routes ,Route, useLocation, useSearchParams} from 'react-router-dom';
 
 //Animation //when leave
 import { AnimatePresence } from 'framer-motion';
@@ -22,6 +22,8 @@ function App() {
   const [currentKey, setCurrentKey] = useState("123");
 
   const location = useLocation();
+  const test = useSearchParams();
+  console.log(test, "test")
 
 
   React.useEffect(() => {

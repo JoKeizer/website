@@ -1,9 +1,10 @@
 
 //Styled Components
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 
-export const LayoutSection = styled.div`
+export const LayoutSection = styled(motion.div)`
   min-height: 90vh;
   display: flex;
   align-items: center;
